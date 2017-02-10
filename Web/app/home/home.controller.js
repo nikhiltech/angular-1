@@ -8,7 +8,7 @@
     controller.$inject = ["$scope"];
 
     function controller($scope) {
-        $scope.value = "Home";
+        $scope.value = "Home - angular 2";
 
         ////////////
     };

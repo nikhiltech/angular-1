@@ -1,7 +1,7 @@
 ﻿<div>
     <div class="row">
-        <h3>WebApi: <span ng-bind="webApi"></span></h3>
-        <h3>Movies</h3>
+        <!--<h3>WebApi: <span ng-bind="webApi"></span></h3>-->
+        <h3>Cars</h3>
     </div>
 
     <div class="row">
@@ -10,15 +10,19 @@
             <tr>
                 <th>Id</th>
                 <th>Name</th>
+                <th>Developer</th>
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="m in movies">
+            <tr ng-repeat="c in cars">
                 <td>
-                    {{m.id}}
+                    <span ng-bind="c.id"></span>
                 </td>
                 <td>
-                    {{m.name}}
+                    <span ng-bind="c.name"></span>
+                </td>
+                <td>
+                    <span ng-bind="c.developer.name"></span>
                 </td>
             </tr>
             </tbody>

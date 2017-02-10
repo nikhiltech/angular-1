@@ -19,14 +19,14 @@
 
         $scope.value = "Movie";
         $scope.webApi = webApiService.confirm;
-        $scope.movies = [];
+        $scope.cars = [];
 
         ////////////
 
         function refresh() {
             webApiService.get("movies", "get")
                 .then(function(data) {
-                    $scope.movies = data;
+                    $scope.cars = data;
                 });
         };
 
