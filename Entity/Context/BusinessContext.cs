@@ -16,11 +16,21 @@ namespace Entity.Context
 
         public DbSet<Car> Cars { get; set; }
         public DbSet<Developer> Developers { get; set; }
+        public DbSet<File> Files { get; set; }
+        public DbSet<Folder> Folders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Car>().Property(c => c.Name)
                 .HasColumnType("nvarchar")
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<File>().Property(f => f.Name)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Folder>().Property(f => f.Name)
                 .HasMaxLength(50)
                 .IsRequired();
         }

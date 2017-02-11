@@ -34,6 +34,8 @@ C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\bin\M
 C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.Migrations.InitialCreate.resources
 C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.Migrations.Firstmigration.resources
+C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.Migrations.FilesAndFolders.resources
+C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.Migrations.ColumnsModified.resources
 C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.csproj.GenerateResource.Cache
 C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.dll
 C:\Users\Мансур\documents\visual studio 2015\Projects\Angular\Entity\obj\Debug\Entity.pdb

@@ -26,6 +26,11 @@
                 url: "/movie",
                 templateUrl: "app/movie/movie.html",
                 controller: "MovieController"
+            })
+            .state("root.files", {
+                url: "/files",
+                templateUrl: "app/files/files.html",
+                controller: "FilesController"
             });
     };
 })();

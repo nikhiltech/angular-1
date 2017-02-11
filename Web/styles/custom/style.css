@@ -1,0 +1,8 @@
+﻿#foldersTreeUl {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.selected {
+    background-color: rgb(176, 255, 176);   
+}

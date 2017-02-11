@@ -1,0 +1,238 @@
+﻿<div class="col-sm-3">
+    <h2 class="sub-header">Folders</h2>
+    <script type="text/ng-template" id="foldersTree.html">
+        <ul id="foldersTreeUl">
+            <li ng-repeat="item in foldersTree">
+
+
+                <div>
+                    <span ng-show="item.childrens" style="cursor: pointer;">
+                        <span class="glyphicon glyphicon-plus" ng-click="item.expanded = true" ng-show="!item.expanded"></span>
+                        <span class="glyphicon glyphicon-minus" ng-click="item.expanded = false" ng-show="item.expanded"></span>
+                    </span>
+                    <span>
+                        <span ng-show="!item.childrens" style="min-width: 18px; float:left;">&nbsp</span>
+                        <span class="glyphicon glyphicon-folder-close" ng-show="!item.expanded"></span>
+                        <span class="glyphicon glyphicon-folder-open" ng-show="item.expanded"></span>
+                        <span ng-bind="item.name"
+                              ng-class="{ 'selected': item == selectedFolder }"
+                              ng-click="selectFolder(item)"
+                              style="cursor: pointer; min-width: 50px;"></span>
+                    </span>
+                </div>
+
+
+                <div ng-if="item.expanded">
+                    <div ng-include="'foldersTree.html'"
+                         onload="foldersTree = item.childrens">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </script>
+    <div ng-include="'foldersTree.html'"></div>
+</div>
+<div class="col-sm-8 ">
+    <h2 class="sub-header">Files</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                    <th>Header</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1,001</td>
+                    <td>Lorem</td>
+                    <td>ipsum</td>
+                    <td>dolor</td>
+                    <td>sit</td>
+                </tr>
+                <tr>
+                    <td>1,002</td>
+                    <td>amet</td>
+                    <td>consectetur</td>
+                    <td>adipiscing</td>
+                    <td>elit</td>
+                </tr>
+                <tr>
+                    <td>1,003</td>
+                    <td>Integer</td>
+                    <td>nec</td>
+                    <td>odio</td>
+                    <td>Praesent</td>
+                </tr>
+                <tr>
+                    <td>1,003</td>
+                    <td>libero</td>
+                    <td>Sed</td>
+                    <td>cursus</td>
+                    <td>ante</td>
+                </tr>
+                <tr>
+                    <td>1,004</td>
+                    <td>dapibus</td>
+                    <td>diam</td>
+                    <td>Sed</td>
+                    <td>nisi</td>
+                </tr>
+                <tr>
+                    <td>1,005</td>
+                    <td>Nulla</td>
+                    <td>quis</td>
+                    <td>sem</td>
+                    <td>at</td>
+                </tr>
+                <tr>
+                    <td>1,006</td>
+                    <td>nibh</td>
+                    <td>elementum</td>
+                    <td>imperdiet</td>
+                    <td>Duis</td>
+                </tr>
+                <tr>
+                    <td>1,007</td>
+                    <td>sagittis</td>
+                    <td>ipsum</td>
+                    <td>Praesent</td>
+                    <td>mauris</td>
+                </tr>
+                <tr>
+                    <td>1,008</td>
+                    <td>Fusce</td>
+                    <td>nec</td>
+                    <td>tellus</td>
+                    <td>sed</td>
+                </tr>
+                <tr>
+                    <td>1,009</td>
+                    <td>augue</td>
+                    <td>semper</td>
+                    <td>porta</td>
+                    <td>Mauris</td>
+                </tr>
+                <tr>
+                    <td>1,010</td>
+                    <td>massa</td>
+                    <td>Vestibulum</td>
+                    <td>lacinia</td>
+                    <td>arcu</td>
+                </tr>
+                <tr>
+                    <td>1,011</td>
+                    <td>eget</td>
+                    <td>nulla</td>
+                    <td>Class</td>
+                    <td>aptent</td>
+                </tr>
+                <tr>
+                    <td>1,012</td>
+                    <td>taciti</td>
+                    <td>sociosqu</td>
+                    <td>ad</td>
+                    <td>litora</td>
+                </tr>
+                <tr>
+                    <td>1,013</td>
+                    <td>torquent</td>
+                    <td>per</td>
+                    <td>conubia</td>
+                    <td>nostra</td>
+                </tr>
+                <tr>
+                    <td>1,014</td>
+                    <td>per</td>
+                    <td>inceptos</td>
+                    <td>himenaeos</td>
+                    <td>Curabitur</td>
+                </tr>
+                <tr>
+                    <td>1,015</td>
+                    <td>sodales</td>
+                    <td>ligula</td>
+                    <td>in</td>
+                    <td>libero</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div style="background-color: rgb(162, 162, 162);">
+    <div class="col-sm-4" style="background-color: rgb(162, 226, 162);">
+        <script type="text/ng-template" id="foldersTree.html">
+            <ul id="foldersTreeUl">
+                <li ng-repeat="item in foldersTree">
+
+
+                    <div>
+                        <span ng-show="item.childrens" style="cursor: pointer;">
+                            <span class="glyphicon glyphicon-plus" ng-click="item.expanded = true" ng-show="!item.expanded"></span>
+                            <span class="glyphicon glyphicon-minus" ng-click="item.expanded = false" ng-show="item.expanded"></span>
+                        </span>
+                        <span>
+                            <span ng-show="!item.childrens" style="min-width: 18px; float:left;">&nbsp</span>
+                            <span class="glyphicon glyphicon-folder-close" ng-show="!item.expanded"></span>
+                            <span class="glyphicon glyphicon-folder-open" ng-show="item.expanded"></span>
+                            <span ng-bind="item.name"
+                                  ng-class="{ 'selected': item == selectedFolder }"
+                                  ng-click="selectFolder(item)"
+                                  style="cursor: pointer; min-width: 50px;"></span>
+                        </span>
+                    </div>
+
+
+                    <div ng-if="item.expanded">
+                        <div ng-include="'foldersTree.html'"
+                             onload="foldersTree = item.childrens">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </script>
+        <div ng-include="'foldersTree.html'"></div>
+    </div>
+    <div style="background-color: rgb(217, 162, 162);">
+        <span>aaa</span>
+        <span>aaa</span>
+        <span>aaa</span>
+    </div>
+
+
+
+
+
+
+
+
+</div>-->

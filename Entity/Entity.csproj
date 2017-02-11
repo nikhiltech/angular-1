@@ -128,9 +128,19 @@
     <Compile Include="Migrations\201702092112542_First migration.Designer.cs">
       <DependentUpon>201702092112542_First migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702102124139_FilesAndFolders.cs" />
+    <Compile Include="Migrations\201702102124139_FilesAndFolders.Designer.cs">
+      <DependentUpon>201702102124139_FilesAndFolders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702102130321_ColumnsModified.cs" />
+    <Compile Include="Migrations\201702102130321_ColumnsModified.Designer.cs">
+      <DependentUpon>201702102130321_ColumnsModified.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Developer.cs" />
+    <Compile Include="Model\File.cs" />
+    <Compile Include="Model\Folder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +149,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702092112542_First migration.resx">
       <DependentUpon>201702092112542_First migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702102124139_FilesAndFolders.resx">
+      <DependentUpon>201702102124139_FilesAndFolders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702102130321_ColumnsModified.resx">
+      <DependentUpon>201702102130321_ColumnsModified.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
