@@ -11,22 +11,38 @@ namespace WebApi.Controllers
 {
     public class FilesController : ApiController
     {
-        [HttpGet]
-        public object Get()
+        [HttpPost]
+        public object Get(GetParams @params)
         {
             using (BusinessContext context = new BusinessContext())
             {
                 var files = context.Files
+                    .OrderBy(f=>f.Id)
+                    .Skip(@params.Skip)
+                    .Take(@params.Top)
                     .Select(f => new
                     {
                         Id = f.Id,
                         Name = f.Name,
-                        FolderId = f.FolderId
+                        FolderId = f.FolderId,
+                        Extension = f.Extension
                     })
                     .ToList();
 
-                return files;
+                var total = context.Files.Count();
+
+                return new
+                {
+                    Values = files,
+                    Total = total
+                };
             }
         }
+    }
+
+    public class GetParams
+    {
+        public int Skip { get; set; }
+        public int Top { get; set; }
     }
 }

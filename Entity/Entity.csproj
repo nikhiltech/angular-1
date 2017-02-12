@@ -136,6 +136,10 @@
     <Compile Include="Migrations\201702102130321_ColumnsModified.Designer.cs">
       <DependentUpon>201702102130321_ColumnsModified.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702121242346_FileExtension.cs" />
+    <Compile Include="Migrations\201702121242346_FileExtension.Designer.cs">
+      <DependentUpon>201702121242346_FileExtension.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Developer.cs" />
@@ -155,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702102130321_ColumnsModified.resx">
       <DependentUpon>201702102130321_ColumnsModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702121242346_FileExtension.resx">
+      <DependentUpon>201702121242346_FileExtension.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

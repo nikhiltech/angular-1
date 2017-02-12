@@ -119,12 +119,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="styles\angular-busy.css" />
+    <Content Include="app\directives\angular-busy\angular-busy.js" />
+    <Content Include="app\directives\paging.js" />
     <Content Include="app\files\files.controller.js" />
     <Content Include="app\files\files.html" />
     <Content Include="app\master\master.controller.js" />
     <Content Include="app\master\master.html" />
     <Content Include="app\movie\movie.controller.js" />
     <Content Include="app\movie\movie.html" />
+    <Content Include="app\services\file.extensions.service.js" />
     <Content Include="app\services\webApi.service.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">

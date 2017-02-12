@@ -8,13 +8,15 @@
     controller.$inject = [
         "$scope",
         "$q",
-        "webApiService"
+        "webApiService",
+        "fileExtensionsService"
     ];
 
     function controller(
         $scope,
         $q,
-        webApiService
+        webApiService,
+        fileExtensionsService
     ) {
 
         $scope.value = "Files";
@@ -22,24 +24,45 @@
         $scope.files = [];
         $scope.foldersTree = null;
         $scope.selectedFolder = null;
+        $scope.page = { current: 0, top: 3, skip: 0, total: 0 };
+        $scope.loadingPromise = null;
+        $scope.loadingPromiseFiles = null;
+        $scope.loadingPromiseFolders = null;
 
         $scope.selectFolder = selectFolder;
+        $scope.pageChanged = pageChanged;
+        $scope.getFileExtDispName = fileExtensionsService.getDispayName;
 
         ////////////
 
         var folders = [];
 
+        function pageChanged(page) {
+            $scope.page.skip = (page - 1) * $scope.page.top;
+            refreshFiles();
+        };
+
         function selectFolder(item) {
-            if ($scope.selectedFolder == item)
+            if ($scope.selectedFolder === item)
                 $scope.selectedFolder = null;
             else
                 $scope.selectedFolder = item;
         };
 
+        function refreshFiles() {
+            $scope.loadingPromiseFiles = getFiles();
+        };
+
         function getFiles() {
-            return webApiService.get("files", "get")
+            var dto = {
+                Skip: $scope.page.skip,
+                Top: $scope.page.top
+            };
+
+            return webApiService.post("files", "get", dto)
                 .then(function(data) {
-                    $scope.files = data;
+                    $scope.files = data.values;
+                    $scope.page.total = data.total;
                 });
         };
 
@@ -52,7 +75,7 @@
 
         function prepare() {
             $scope.foldersTree = folders;
-            _.forEach($scope.foldersTree, function (f) {
+            _.forEach($scope.foldersTree, function(f) {
                 if (!f.parentId)
                     return;
                 var parent = _.find($scope.foldersTree, { id: f.parentId });
@@ -64,7 +87,7 @@
         };
 
         function refresh() {
-            $q.all([
+            $scope.loadingPromise = $q.all([
                     getFiles(),
                     getFolders()
                 ])
